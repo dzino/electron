@@ -1,7 +1,10 @@
 const path = require("path")
 
 const { app, BrowserWindow } = require("electron")
-const isDev = require("electron-is-dev")
+let isDev = false
+try {
+  isDev = require("electron-is-dev")
+} catch (e) {}
 
 function createWindow() {
   // Create the browser window.

@@ -1,4 +1,4 @@
-# TRAINING CASE: Alarm threshold graph [Electron]
+# ELECTRON BUILD
 
 ![](./screenshot.gif)
 
@@ -98,4 +98,25 @@ app.on("activate", () => {
 
 ```bash
 yarn dev
+```
+
+### 5. Build
+
+```bash
+yarn web # Web
+yarn linux # Linux
+```
+
+PS. In case of an empty window, change `package.json`:
+
+```diff
+{
+  ...
+  "scripts": {
+    ...
+    "web": "react-scripts build",
+-   "linux": "react-scripts build && sed -i 's/\\/static/\\.\\/static/g' ./build/index.html && electron-packager . alarm-threshold-graph --overwrite --asar=true --platform=linux --arch=x64 --icon=public/icons/512x512.png --prune=true --out=release-builds"
++   "linux": "react-scripts build && electron-packager . alarm-threshold-graph --overwrite --asar=true --platform=linux --arch=x64 --icon=public/icons/512x512.png --prune=true --out=release-builds"
+  },
+}
 ```
