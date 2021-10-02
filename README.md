@@ -16,6 +16,7 @@
 
 - [TRAINING CASE: Alarm threshold graph](https://github.com/dzino/alarm-threshold-graph)
 - [Getting Started with Electron by Creating a React App](https://www.section.io/engineering-education/desktop-application-with-react/)
+- [Дружим Create-React-App и Electron](https://polyakovdmitriy.ru/create-react-app-electron/)
 
 ## Steps:
 
@@ -106,18 +107,4 @@ yarn dev
 ```bash
 yarn web # Web
 yarn linux # Linux
-```
-
-PS. In case of an empty window, change `package.json`:
-
-```diff
-{
-  ...
-  "scripts": {
-    ...
-    "web": "react-scripts build",
--   "linux": "react-scripts build && sed -i 's/\\/static/\\.\\/static/g' ./build/index.html && electron-packager . alarm-threshold-graph --overwrite --asar=true --platform=linux --arch=x64 --icon=public/icons/512x512.png --prune=true --out=release-builds"
-+   "linux": "react-scripts build && electron-packager . alarm-threshold-graph --overwrite --asar=true --platform=linux --arch=x64 --icon=public/icons/512x512.png --prune=true --out=release-builds"
-  },
-}
 ```

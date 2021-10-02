@@ -1,5 +1,6 @@
 {
   "name": "alarm-threshold-graph",
+  "homepage": "./",
   "main": "public/electron.js",
   "version": "0.1.0",
   "private": true,
@@ -25,7 +26,7 @@
     "electron": "wait-on tcp:3000 && electron .",
     "dev": "concurrently -k \"BROWSER=none npm start\" \"npm:electron\"",
     "web": "react-scripts build",
-    "linux": "react-scripts build && sed -i 's/\\/static/\\.\\/static/g' ./build/index.html && electron-packager . alarm-threshold-graph --overwrite --asar=true --platform=linux --arch=x64 --icon=public/icons/512x512.png --prune=true --out=release-builds"
+    "linux": "react-scripts build && electron-packager . alarm-threshold-graph --overwrite --asar=true --platform=linux --arch=x64 --icon=public/icons/512x512.png --prune=true --out=release-builds"
   },
   "eslintConfig": {
     "extends": [
