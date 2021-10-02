@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import * as Dec from "../declaration"
+import { Actions, General, Redux } from "../types"
 import GraphX from "../components/graph"
 import { SVG } from "../components/svg"
 import Circular from "../components/circular-input"
@@ -69,18 +69,18 @@ class Graph {
 
 export default function App() {
   /* Redux */
-  const dispatch: (v: Dec.Actions.All) => void = useDispatch()
+  const dispatch: (v: Actions.All) => void = useDispatch()
   const [limitTemp, setLimitTemp] = [
-    useSelector((state: Dec.Redux.RootState) => state.limitTemp.value),
-    (v: Dec.General.TempUnit) => dispatch({ type: "LIMIT_TEMP", payload: v }),
+    useSelector((state: Redux.RootState) => state.limitTemp.value),
+    (v: General.TempUnit) => dispatch({ type: "LIMIT_TEMP", payload: v }),
   ]
-  const data = useSelector((state: Dec.Redux.RootState) => state.data.value)
+  const data = useSelector((state: Redux.RootState) => state.data.value)
 
   const [temperature, setTemperature] = useState<number>(0)
   const alarm: boolean = temperature < limitTemp
 
-  const { graphLength, timeout }: Dec.Redux.RootState["settings"] = useSelector(
-    (state: Dec.Redux.RootState) => state.settings
+  const { graphLength, timeout }: Redux.RootState["settings"] = useSelector(
+    (state: Redux.RootState) => state.settings
   )
 
   const graphTemp = new Graph(

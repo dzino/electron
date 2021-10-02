@@ -1,4 +1,4 @@
-import { Redux } from "../declaration"
+import { Redux } from "../types"
 import { combineReducers } from "redux"
 import { limitTemperatureReducer } from "./limitTemperatureReducer"
 import { dataReducer } from "./dataReducer"

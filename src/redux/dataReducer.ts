@@ -1,13 +1,13 @@
-import * as Dec from "../declaration"
+import { Redux, Actions } from "../types"
 
-const initialState: Dec.Redux.RootState["data"] = {
+const initialState: Redux.RootState["data"] = {
   value: [],
 }
 
 export const dataReducer = (
   state = initialState,
-  action: Dec.Actions.List["data"]
-): Dec.Redux.RootState["data"] => {
+  action: Actions.List["data"]
+): Redux.RootState["data"] => {
   switch (action.type) {
     case "DATA":
       return { ...state, value: [...state.value, action.payload] }

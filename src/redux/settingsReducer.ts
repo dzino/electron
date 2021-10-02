@@ -1,6 +1,6 @@
-import * as Dec from "../declaration"
+import { Redux } from "../types"
 
-const initialState: Dec.Redux.RootState["settings"] = {
+const initialState: Redux.RootState["settings"] = {
   host: "192.168.43.100",
   port: 8080,
   graphLength: 120,
@@ -10,4 +10,4 @@ const initialState: Dec.Redux.RootState["settings"] = {
 
 export const settingsReducer = (
   state = initialState
-): Dec.Redux.RootState["settings"] => state
+): Redux.RootState["settings"] => state

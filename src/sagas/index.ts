@@ -1,5 +1,5 @@
 import { put, select, fork, takeEvery, takeLatest } from "redux-saga/effects"
-import { General, Redux } from "../declaration"
+import { General, Redux } from "../types"
 import { Update } from "./server"
 import { GetStorage, SetStorage, ClearStorage } from "./localStorage"
 

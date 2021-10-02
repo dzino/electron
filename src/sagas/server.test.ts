@@ -1,5 +1,5 @@
 import { Update } from "./server"
-import { General } from "../declaration"
+import { General } from "../types"
 import "../argPrototypes"
 
 describe("Test server:", () => {

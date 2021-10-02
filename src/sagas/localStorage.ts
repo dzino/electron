@@ -1,4 +1,4 @@
-import { General, Actions } from "../declaration"
+import { General, Actions } from "../types"
 
 abstract class LocalStorage {
   private key: string = "limitTemp"

@@ -1,4 +1,4 @@
-import { General, Actions } from "../declaration"
+import { General, Actions } from "../types"
 import dateFormat from "dateformat"
 
 class Tools {
