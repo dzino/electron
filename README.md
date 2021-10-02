@@ -22,6 +22,7 @@
 ### 1. Installing Libraries
 
 ```bash
+yarn global add electron-packager
 yarn add -D electron electron-is-dev
 yarn add -D concurrently wait-on
 ```
