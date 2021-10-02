@@ -85,13 +85,17 @@ app.on("activate", () => {
 ```diff
 {
 + "main": "public/electron.js",
++ "homepage": "./",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+-   "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
 +   "dev": "concurrently -k \"BROWSER=none npm start\" \"npm:electron\"",
 +   "electron": "wait-on tcp:3000 && electron ."
++   "build-web": "react-scripts build",
++   "build-linux": "react-scripts build && electron-packager . alarm-threshold-graph --overwrite --asar=true --platform=linux --arch=x64 --icon=public/icons/512x512.png --prune=true --out=release-builds"
+
   },
 }
 ```
