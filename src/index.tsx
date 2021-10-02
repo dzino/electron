@@ -2,7 +2,6 @@ import * as React from "react"
 import ReactDOM from "react-dom"
 import Redux from "./redux"
 import "bootstrap/dist/css/bootstrap.min.css"
-import "./index.css"
 
 import App from "./views"
 
