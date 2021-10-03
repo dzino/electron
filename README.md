@@ -93,7 +93,7 @@ app.on("activate", () => {
 -   "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-+   "dev": "concurrently -k \"BROWSER=none npm start\" \"npm:electron\"",
++   "dev-electron": "concurrently -k \"BROWSER=none react-scripts start\" \"npm:electron\"",
 +   "electron": "wait-on tcp:3000 && electron ."
 +   "build-web": "react-scripts build",
 +   "build-linux": "react-scripts build && electron-packager . alarm-threshold-graph --overwrite --asar=true --platform=linux --arch=x64 --icon=public/icons/512x512.png --prune=true --out=release-builds"
@@ -105,14 +105,14 @@ app.on("activate", () => {
 ### 4. Run Dev
 
 ```bash
-yarn dev
+yarn dev-electron
 ```
 
 ### 5. Build
 
 ```bash
-yarn web # Web
-yarn linux # Linux
+yarn build-web # Web
+yarn build-linux # Linux
 ```
 
 ## Working with Files

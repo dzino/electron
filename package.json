@@ -21,7 +21,7 @@
   },
   "scripts": {
     "dev-web": "react-scripts start",
-    "dev-electron": "concurrently -k \"BROWSER=none npm start\" \"npm:electron\"",
+    "dev-electron": "concurrently -k \"BROWSER=none react-scripts start\" \"npm:electron\"",
     "test-dev": "yarn jest",
     "test-prod": "yarn jest -production",
     "eject": "react-scripts eject",
