@@ -43,6 +43,8 @@ function createWindow() {
     height: 600,
     webPreferences: {
       nodeIntegration: true,
+      enableRemoteModule: true,
+      contextIsolation: false,
     },
   })
 
@@ -111,4 +113,28 @@ yarn dev
 ```bash
 yarn web # Web
 yarn linux # Linux
+```
+
+## Working with Files
+
+Connecting the library via `window`:
+
+```js
+const fs = window.require("fs")
+```
+
+Writing:
+
+```js
+fs.writeFile("/home/user/test.txt", "Hello", (err: string) => {
+  if (err) console.log(err)
+})
+```
+
+Reading:
+
+```js
+fs.readFile("/home/user/hi.txt", "utf8", function (err: any, data: any) {
+  console.log(data)
+})
 ```
