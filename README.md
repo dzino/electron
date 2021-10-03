@@ -134,7 +134,11 @@ fs.writeFile("/home/user/test.txt", "Hello", (err: string) => {
 Reading:
 
 ```js
-fs.readFile("/home/user/hi.txt", "utf8", function (err: any, data: any) {
-  console.log(data)
-})
+fs.readFile(
+  "/home/user/test.txt",
+  "utf8",
+  function (err: string, data: string) {
+    console.log(data)
+  }
+)
 ```
